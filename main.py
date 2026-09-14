@@ -22,15 +22,10 @@ def mostrarBievenida():
 
 mostrarBievenida()
 
-def mostrarMenu():
-    print("REGISTRE SU ENTRENAMIENTO DEL DÍA ")
-    print("")
-    print("")
-    print("")
 
 #haré un diccionario de ejericicos para que el usuario escoja y no agregue ejercicios inventados (no aún)
 ejerciciosDisponibles = {
-"Pecho " : ["Press de banca plano", "Press icnlinado con mancueras", "Aperturas en polea alta", "Fondos en paralelas", "Flexiones de pecho (Push-ups)" ],
+"Pecho" : ["Press de banca plano", "Press icnlinado con mancueras", "Aperturas en polea alta", "Fondos en paralelas", "Flexiones de pecho (Push-ups)" ],
 "Espalda" : ["Dominadas pronadas", "Jalón al pecho con agarre ancho", "Remo con barra", "Remo unilateral con mancuerna", "Peso muerto convecional"],
 "Piernas" : ["Sentadilla trasera con barra", "Prensa inclinada 45°", "Peso muerto rumano", "Extendiones de cuádriceps", "Curl femoral sentado", "Zancadas / Sentadilla búlgaras", "Elevación de talones"],
 "Hombros" : ["Press militar sentado", "Elevaciones laterales", "Face pull", "Elevaciones frontales"],
@@ -40,7 +35,7 @@ ejerciciosDisponibles = {
 }
 
 #voy a mostrar ahora los grupos que he creado
-grupos = ["Pecho", "Espalda", "Piernas", "Hombres", "Brazos", "Core", "Cardio"]
+grupos = ["Pecho", "Espalda", "Piernas", "Hombros", "Brazos", "Core", "Cardio"]
 
 #ahora creare el def para pedirle al usuario elegir el ejercicio de los que se agrego
 #necesito que me muestre primero el grupo muscular y luego los ejericicos de ese grupo 
@@ -55,5 +50,23 @@ print ("\nGrupos musculares disponibles:")
 for i, grupo in enumerate(grupos, start=1):
     print(f"{i}. {grupo}")
 
-opcionTexto = input("Elige el número del grupo muscular: ")
+opcion = int(input("Elige el número del grupo muscular: "))
+
+#restare un 1 porque coloque el menú que contara desde 1, pero python
+#cuenta desde 0 
+
+grupoElegido = grupos[opcion - 1]
+
+#se debe escoger el ejercicio dentro de ese grupo
+ejercioDelGrupo = ejerciciosDisponibles[grupoElegido]
+
+def elegirEjercicio():
+
+    print(f"\nEjercicios de {grupoElegido}:")
+    for i, nombre in enumerate(ejercioDelGrupo, start=1):
+        print(f"{i}. {nombre}")
+
+    opcion = int(input("Elige el número del ejercicio: "))
+    return ejercioDelGrupo[opcion - 1]
+
 

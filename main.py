@@ -70,3 +70,56 @@ def elegirEjercicio():
     return ejercioDelGrupo[opcion - 1]
 
 
+def mostrarMenu():
+    #mostrare las ocpiones que el usuario puede escoger 
+
+    print("\n=== REGISTRO DE ENTRENAMIENTO ===")
+    print("1. Agregar el ejercicio del día")
+    print("2. Ver histroial semanal")
+    print("3. Calcular progreso")
+    print("4. Buscar ejercicio")
+    print("5. Filtrar por peso mínimo")
+    print("6. Salir")
+
+
+def ejercicioYaRegistrado(dia, nombre):
+    #se revisa si ya existe un registro con ese mismo día 
+    #y el mismo ejercicios dentro del historial. Devuelve un true o false
+
+    for ejercicio in Historial:
+        if ejercicio["dia"] == dia and ejercicio["nombre"] == nombre:
+            return True
+    return False
+
+
+def agregarEjercicio():
+    #pide los datos de un ejercicio y los guardara en el historial
+    print("\n--- Agregar ejercicio----")
+    dia = input("¿Qué día fue? (ej: lunes): ").lower()
+
+    #como ya esta el registeo de los ejercicios disponibles,
+    #solo debe escoger lo que se encuentre disponible
+    nombre = elegirEjercicio()
+
+    #avisa si ese ejercicio ya se había registrado ese mismo día
+    #pero se deja seguir agregandolo de todas formas
+    if ejercicioYaRegistrado(dia, nombre):
+        print(f"Ya tenías registrado '{nombre}' el {dia}. lo agregamos igual como una serie más")
+
+    series = int(input("¿Cuántas series hiciste?: "))
+    repeteciones = int(input("¿Cuántas repretciones por serie?: "))
+
+    peso = float(input("¿Con cuánto peso? (en kilos): "))
+
+    ejercicio = {
+        "dia": dia, 
+        "nombre": nombre,
+        "series": series, 
+        "repeticiones": repeteciones,
+        "peso": peso, 
+    }
+
+    #guarda la informacion que se registra en nombre y dia
+    Historial.append(ejercicio)
+    print(f"¡Listo! Se guardó '{nombre}' del {dia}")
+    

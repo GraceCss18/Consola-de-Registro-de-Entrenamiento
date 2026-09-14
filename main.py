@@ -122,4 +122,35 @@ def agregarEjercicio():
     #guarda la informacion que se registra en nombre y dia
     Historial.append(ejercicio)
     print(f"¡Listo! Se guardó '{nombre}' del {dia}")
-    
+
+
+def verHistorial():
+    #se muestra todos los ejericicios guardados en orden
+    print("\n----Historial semanal----")
+
+    #utilizo len para poder ver cuantas fichas tengo dentro 
+    #de mi lista historial
+    if len(Historial) == 0:
+        print("Todavía no hay ejericicos guardados")
+        return
+
+    #recorremos la lista ficha por ficha creada en el anterior def 
+    #y mostrarmos los datos
+    for i, ejercicio in enumerate(Historial, start=1):
+        print(
+            f"{i}. [{ejercicio['dia']}] {ejercicio['nombre']} "
+            f"{ejercicio['series']} series x {ejercicio['repeticiones']} reps "
+            f"con {ejercicio['peso']} kg"
+        )
+
+def promedioPeso(registros):
+    #calcula el peso promedio de una lista de registrol del historial
+    #usando sum() y len(), igual que en el ejercicio de promedio
+
+    pesos = []
+    for registro in registros:
+        pesos.append(registro["peso"])
+
+    suma = sum(pesos)
+    cantidad = len(pesos)
+    return suma / cantidad

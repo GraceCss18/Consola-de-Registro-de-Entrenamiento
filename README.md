@@ -1,4 +1,4 @@
-# *Registro de Entrenamiento (GYM) *
+# Registro de Entrenamiento (GYM) 
 Consola en python para registrar los ejercicio de un usuario en el gimnasio, ver el historial, calcular el progeso, buscar ejercicios y filtrar por peso levantado.
 
 ## ¿Cómo ejecutarlo?
@@ -33,7 +33,7 @@ Nada de est se guarda en un archivo, si cierras el programa, el historial se pie
 ## Funciones del programa 
 
 ### Función               | Qué hace
---------------------------|---------------------
+
 mostrarBievenida()        | Muestra el mensaje de bienvenida, una sola vez al inciiar
 elegirEjercicio()         | Primero pregunta el grupo muscular, luego el ejercicio específico de ese grupo y devuelve el nombre elegido.
 mostrarMenu()             | Muestra las 6 opciones del menú.

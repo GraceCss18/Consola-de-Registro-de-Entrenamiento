@@ -154,3 +154,45 @@ def promedioPeso(registros):
     suma = sum(pesos)
     cantidad = len(pesos)
     return suma / cantidad
+
+
+def calcularProgeso():
+    #compara el primer y el último regsitro de un mismo ejercicio
+    #para ver si el peso levantando subió, bajó o quedó igual y muestra 
+    #también el peso promedio de todos esos registros
+
+    print("\n----Calcular progeso---------")
+    nombre = input("¿De qué ejercicio quieres ver tu progeso").lower()
+
+    #se busca dentro del historial los ejercicios que tengan ese nombre
+
+    registros = [e for e in Historial if e["nombre"] == nombre]
+
+    if len(registros) == 0:
+        print("No enconté ese ejercico en tu historial.")
+        return
+
+    promedio = promedioPeso(registros)
+    print(f"Peso primedio en '{nombre}': {promedio} kg")
+
+    if len(registros) ==1:
+        print("Solo tienes un registro de ese ejercicios, todavía no hay progreso que comparar.")
+        return
+
+    primero = registros[0]
+    ultimo = registros[-1]
+    diferencia = ultimo["peso"] - primero["peso"]
+
+    print(f"Primer registro: {primero['peso']} kg ({primero['dia']})")
+    print(f"Ultimo registro: {ultimo['peso']} kg ({ultimo['dia']})")
+
+    if diferencia >0:
+        print(f"¡Vas mejorando! Subiste {diferencia} kg ({primero['dia']})") 
+    elif diferencia < 0:
+        print(f"Bajaste {abs(diferencia)} kg en '{nombre}'. ¡Tranquila baby, eso también pasa!")
+    else:
+        print(f"Te mantuviste igual en '{nombre}'")
+
+
+
+    

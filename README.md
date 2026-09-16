@@ -32,9 +32,17 @@ Nada de est se guarda en un archivo, si cierras el programa, el historial se pie
 
 ## Funciones del programa 
 
-### |Función               | Qué hace                       |
-
-|mostrarBievenida()        | Muestra el mensaje de bienvenida, una sola vez al |inciiar
-|elegirEjercicio()         | Primero pregunta el grupo muscular, luego el ejercicio específico de ese grupo y devuelve el nombre elegido.|
-|mostrarMenu()             | Muestra las 6 opciones del menú.|
-|ejercicioYaRegistrado()   | Revisa si ya existe un registro con ese mismo día y nombre, devuelve *True* o *False*.|
+### |Función | Qué hace |
+|---|---|
+| mostrarBievenida() | Muestra el mensaje de bievenida, una sola vez al inciar. |
+| elegirEjercicio() | Primero pregunta el grupo muscular, luego el ejercicio específico de ese grupo y devuelve el nombre elegido. |
+| mostrarMenu() | Muestra las 6 opciones del menú. |
+| ejercicioYaRegistrado(dia, nombre) | Revisa si ya existe un registro con ese mismo día y nombre, devuelve *True* o *False* |
+| agregarEjercicio() | Pide el día, llama a *elegirEjercicio()*, avisa si ya estaba registrado, pide series/repteciones/peso, arma el diccionario y lo guarda con *append()* en *Historial* |
+| verHistorial() | Muestra todos los ejericicos guardados, en el orden en que se agregaron |
+| promedioPeso(registros) | Calcula el peso promedio de una lista de registros, usando sum() y len(). |
+| calcularProgreso() | Busca los registros de un ejercicio, muestra el peso promedio y compara el primero contra el último para sabir si subiste, bajaste o te mantuviste en el peso. |
+| buscarEjercicio() | Busca ejercicios cuyo nombre contenga el texto que escribas. |
+| filtrarPorPeso(pesoMinimo=50) | Devuelve los ejerciicos del historial con peso mayor al indicado (por defecto, 50 kg si no se especifica). |
+| mostrarFiltradoPorPeso() | Pregunta un peso mínimo (opcional) y muestra los ejercicios que lo superan |
+| main() | El bucle principal: bievenida una vez, luego el menú repitiéndose hasta elegir "Salir" |

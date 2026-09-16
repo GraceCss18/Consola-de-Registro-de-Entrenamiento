@@ -32,13 +32,13 @@ Nada de est se guarda en un archivo, si cierras el programa, el historial se pie
 
 ## Funciones del programa 
 
-### |Función | Qué hace |
+| Función | Qué hace |
 |---|---|
 | mostrarBievenida() | Muestra el mensaje de bievenida, una sola vez al inciar. |
 | elegirEjercicio() | Primero pregunta el grupo muscular, luego el ejercicio específico de ese grupo y devuelve el nombre elegido. |
 | mostrarMenu() | Muestra las 6 opciones del menú. |
-| ejercicioYaRegistrado(dia, nombre) | Revisa si ya existe un registro con ese mismo día y nombre, devuelve *True* o *False* |
-| agregarEjercicio() | Pide el día, llama a *elegirEjercicio()*, avisa si ya estaba registrado, pide series/repteciones/peso, arma el diccionario y lo guarda con *append()* en *Historial* |
+| ejercicioYaRegistrado(dia, nombre) | Revisa si ya existe un registro con ese mismo día y nombre, devuelve True o False |
+| agregarEjercicio() | Pide el día, llama a elegirEjercicio(), avisa si ya estaba registrado, pide series/repteciones/peso, arma el diccionario y lo guarda con append() en Historial |
 | verHistorial() | Muestra todos los ejericicos guardados, en el orden en que se agregaron |
 | promedioPeso(registros) | Calcula el peso promedio de una lista de registros, usando sum() y len(). |
 | calcularProgreso() | Busca los registros de un ejercicio, muestra el peso promedio y compara el primero contra el último para sabir si subiste, bajaste o te mantuviste en el peso. |

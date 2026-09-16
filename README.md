@@ -46,3 +46,83 @@ Nada de est se guarda en un archivo, si cierras el programa, el historial se pie
 | filtrarPorPeso(pesoMinimo=50) | Devuelve los ejerciicos del historial con peso mayor al indicado (por defecto, 50 kg si no se especifica). |
 | mostrarFiltradoPorPeso() | Pregunta un peso mínimo (opcional) y muestra los ejercicios que lo superan |
 | main() | El bucle principal: bievenida una vez, luego el menú repitiéndose hasta elegir "Salir" |
+
+## Ejemplo de uso
+=========================================
+BIENVENIDO A SU REGISTRO DE ENTRENAMIENTO
+=========================================
+
+=== REGISTRO ED ENTRENAMIENTO ===
+1. Agregar el ejericio del día
+2. Ver historial semanal
+3. Calcular progreso
+4. Buscar ejercicio
+5. Filtrar por peso mínimo 
+6. Salir
+Elige una opción (1-6): 1
+
+--- Agregar ejercicio ---
+¿Qué día fue? (ej: lunes): lunes
+
+Grupos muscualres disponibles:
+1. Pecho
+2. Espalda
+3. Piernas
+4. Hombros
+5. Brazos
+6. Core
+7. Cardio
+Elige el número del grupo muscular: 3
+
+Ejercicios de Piernas:
+1. Sentadilla trasera con barra
+2. Prensa inclinada 45°
+3. Peso muerto rumano
+4. Extenciones de cuádriceps
+5: Curl femoral sentado
+6. Zancada / Sentadilla búlgaras
+7. Elevación de talones
+Elige el número del ejercicio: 1
+¿Cuántas series hiciste?: 3
+¿Cuántas repeticiones por serie? 10
+¿Con cuánto peso? (en kilos): 40
+¡Listo! Se guardó 'sentadilla trasera con barra' del lunes
+
+## Ideas de python que se practicaron
+
+### Listas y diccionarios:
+Para guardar información (*Historial, ejerciciosDisponibles*).
+
+### Funciones 
+(*def*) para organizar cada tarea por separado.
+
+### While true
+Para el menú que se repite, con *break* para salir.
+
+### for + enumarate
+Para mostrar listas numeradas ( con *i* cuando importa la posición).
+
+### List comprehension
+(*[e for e in Historial if ....]*) para filtrar el historial por nombre, usando *e* cuando solo importa el elemento, no su posición.
+
+### if/elif/else
+Para las decisiones del menú.
+
+### return dentro de un for/if
+Para cortar la función apenas se cumple una condición (como en *ejercicioYaRegistrado*).
+
+### Valor por defecto
+en *filtrarPorPeso(pesoMinimo=50)*.
+
+### sum() y len()
+Para calcular el promedio.
+
+### .append()
+Para ir agregando elementos a una lista, uno por uno.
+
+### .lower() 
+En el día y el nombre del ejercicio, para que las comparaciones ( *== , in*) no fallen por mayúsculas/minúsculas.
+
+### if __name__ == "__main__"
+Para que *main()* solo se efecute cuando el archivo se corre directamente.
+

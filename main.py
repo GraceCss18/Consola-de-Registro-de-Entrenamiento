@@ -196,4 +196,14 @@ def buscarEjercicio():
             f"con {ejercicio['peso']} kg"
         )
 
-    
+
+def filtrarPorPeso(pesoMinimo=50):
+    #devuelve una lista con los ejercicios cuyo peso fue mayor a 
+    #pesoMinimo, sino le das ese dato, usa 50kg por defecto
+
+    resultado = []
+    for ejercicio in Historial:
+        if ejercicio["peso"] > pesoMinimo:
+            resultado.append(ejercicio)
+    return resultado
+

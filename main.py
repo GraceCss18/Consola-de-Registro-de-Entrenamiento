@@ -224,7 +224,7 @@ def mostrarFiltradoPorPeso():
     for ejercicio in encontrados:
         print(
             f"[{ejercicio['dia']} {ejercicio['nombre']}] - "
-            f"{ejercicio['series']} series x {ejercicio['repeticiones']} reps"
+            f"{ejercicio['series']} series x {ejercicio['repeticiones']} reps "
             f"con {ejercicio['peso']} kg"
         )
 

@@ -262,6 +262,7 @@ def main():
             print("Esa opción no existe, intenta con un número del 1 al 6.")
 
 
-
+#esto hace que main() se ejecuta solo cuando corro este archivo y
+#no si alguien más lo usara como herramienta desde otro archivo
 if __name__ == "__main__":
     main()

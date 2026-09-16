@@ -207,3 +207,25 @@ def filtrarPorPeso(pesoMinimo=50):
             resultado.append(ejercicio)
     return resultado
 
+def mostrarFiltradoPorPeso():
+    #pregunta un peso mínimo y muestra los ejercicios que los supera
+    print("\n---Filtrar por peso mínimo---")
+    texto = input("¿Peso mínimo en kg? (déjalo vacío para usar 50kg por defecto): ")
+
+    if texto == "":
+        #el usuario no escrbió nada: utiliza el filtrarPorPeso con el valor de defecto
+        encontrados = filtrarPorPeso()
+    else:
+        encontrados = filtrarPorPeso(float(texto))
+
+    if len(encontrados) == 0:
+        print("No hay ejercicios que superen ese peso.")
+        return
+
+    for ejercicio in encontrados:
+        print(
+            f"[{ejercicio['dia']} {ejercicio['nombre']}] - "
+            f"{ejercicio['series']} series x {ejercicio['repeticiones']} reps"
+            f"con {ejercicio['peso']} kf"
+        )
+    

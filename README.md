@@ -32,9 +32,9 @@ Nada de est se guarda en un archivo, si cierras el programa, el historial se pie
 
 ## Funciones del programa 
 
-### Función               | Qué hace
+### |Función               | Qué hace                       |
 
-mostrarBievenida()        | Muestra el mensaje de bienvenida, una sola vez al inciiar
-elegirEjercicio()         | Primero pregunta el grupo muscular, luego el ejercicio específico de ese grupo y devuelve el nombre elegido.
-mostrarMenu()             | Muestra las 6 opciones del menú.
-ejercicioYaRegistrado()   | Revisa si ya existe un registro con ese mismo día y nombre, devuelve *True* o *False*.
+|mostrarBievenida()        | Muestra el mensaje de bienvenida, una sola vez al |inciiar
+|elegirEjercicio()         | Primero pregunta el grupo muscular, luego el ejercicio específico de ese grupo y devuelve el nombre elegido.|
+|mostrarMenu()             | Muestra las 6 opciones del menú.|
+|ejercicioYaRegistrado()   | Revisa si ya existe un registro con ese mismo día y nombre, devuelve *True* o *False*.|

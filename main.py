@@ -26,10 +26,10 @@ def mostrarBievenida():
 ejerciciosDisponibles = {
 "Pecho" : ["Press de banca plano", "Press icnlinado con mancueras", "Aperturas en polea alta", "Fondos en paralelas", "Flexiones de pecho (Push-ups)" ],
 "Espalda" : ["Dominadas pronadas", "Jalón al pecho con agarre ancho", "Remo con barra", "Remo unilateral con mancuerna", "Peso muerto convecional"],
-"Piernas" : ["Sentadilla trasera con barra", "Prensa inclinada 45°", "Peso muerto rumano", "Extendiones de cuádriceps", "Curl femoral sentado", "Zancadas / Sentadilla búlgaras", "Elevación de talones"],
+"Piernas" : ["Sentadilla trasera con barra", "Prensa inclinada 45°", "Peso muerto rumano", "Extenciones de cuádriceps", "Curl femoral sentado", "Zancadas / Sentadilla búlgaras", "Elevación de talones"],
 "Hombros" : ["Press militar sentado", "Elevaciones laterales", "Face pull", "Elevaciones frontales"],
 "Brazos" : ["Curl de bíceps con barra Z", "Curl martillo", "Extensiones de tríceps en polea", "Press francés"],
-"Core" : ["Plancga abdominal isométrica", "Elevanción de piernas colgado", "Crunch en polea"],
+"Core" : ["Plancha abdominal isométrica", "Elevanción de piernas colgado", "Crunch en polea"],
 "Cardio" : ["Caminadora", "Spinning", "Eliptica", "Remo ergométrico", "Escaladora", "Salto con cuerda", "Burpees", "Jumping Jacks", "Mountin Climbers", "Sprints en pista", "Sombras de boxeo", "Sled Push"]
 }
 
@@ -91,7 +91,7 @@ def agregarEjercicio():
         print(f"Ya tenías registrado '{nombre}' el {dia}. lo agregamos igual como una serie más")
 
     series = int(input("¿Cuántas series hiciste?: "))
-    repeteciones = int(input("¿Cuántas repretciones por serie?: "))
+    repeteciones = int(input("¿Cuántas repeticiones por serie?: "))
 
     peso = float(input("¿Con cuánto peso? (en kilos): "))
 

@@ -20,7 +20,6 @@ def mostrarBievenida():
     print("BIEVENIDO A SU REGISTRO DE ENTRENAMIENTO")
     print("========================================")
 
-mostrarBievenida()
 
 
 #haré un diccionario de ejericicos para que el usuario escoja y no agregue ejercicios inventados (no aún)
@@ -84,7 +83,7 @@ def agregarEjercicio():
 
     #como ya esta el registeo de los ejercicios disponibles,
     #solo debe escoger lo que se encuentre disponible
-    nombre = elegirEjercicio()
+    nombre = elegirEjercicio().lower()
 
     #avisa si ese ejercicio ya se había registrado ese mismo día
     #pero se deja seguir agregandolo de todas formas
@@ -191,8 +190,8 @@ def buscarEjercicio():
 
     for ejercicio in encontrados:
         print(
-            f"[{ejercicio['dia']}] {ejercicio['nombre']} -"
-            f"{ejercicio['series']} series x {ejercicio['repeticiones']} reps"
+            f"[{ejercicio['dia']}] {ejercicio['nombre']} - "
+            f"{ejercicio['series']} series x {ejercicio['repeticiones']} reps "
             f"con {ejercicio['peso']} kg"
         )
 
@@ -226,6 +225,43 @@ def mostrarFiltradoPorPeso():
         print(
             f"[{ejercicio['dia']} {ejercicio['nombre']}] - "
             f"{ejercicio['series']} series x {ejercicio['repeticiones']} reps"
-            f"con {ejercicio['peso']} kf"
+            f"con {ejercicio['peso']} kg"
         )
-    
+
+
+def main():
+    #va mostrar el menú una y otra vez
+    #paso1 1: bievenida, una sola vez antes de que arrance el bucle
+
+    mostrarBievenida()
+
+    while True:
+        #paso 2: menú principal, se repite en cada vuelta
+
+        mostrarMenu()
+        opcion = input("Elige una opción (1-6): ")
+
+        #paso 3: solo si elige el 1, se llega a eligir un ejercicio
+        #(agregarEjercicio() llama a elergirEjercicio() que muestra
+        #los ejercicios de ejericicosDisponibles)
+
+        if opcion == "1":
+            agregarEjercicio()
+        elif opcion == "2":
+            verHistorial()
+        elif opcion == "3":
+            calcularProgeso()
+        elif opcion == "4":
+            buscarEjercicio()
+        elif opcion == "5":
+            mostrarFiltradoPorPeso()
+        elif opcion == "6":
+            print("\n¡Nos vemos en el próximo entrenamiento!💪🏼💪🏽")
+            break
+        else:
+            print("Esa opción no existe, intenta con un número del 1 al 6.")
+
+
+
+if __name__ == "__main__":
+    main()

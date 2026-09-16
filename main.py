@@ -37,38 +37,23 @@ ejerciciosDisponibles = {
 #voy a mostrar ahora los grupos que he creado
 grupos = ["Pecho", "Espalda", "Piernas", "Hombros", "Brazos", "Core", "Cardio"]
 
-#ahora creare el def para pedirle al usuario elegir el ejercicio de los que se agrego
-#necesito que me muestre primero el grupo muscular y luego los ejericicos de ese grupo 
-
-#le mostrare la opción de los grupos musculares
-print ("\nGrupos musculares disponibles:")
-
-#ahora usuare for para mostrarle al usuario los grupos musculares y la lista dentro de ese grupo muscular
-#para que pueda escojer
-#escogí la opcion de i y enumerate para que me los enumere como opciones para el usuario 
-
-for i, grupo in enumerate(grupos, start=1):
-    print(f"{i}. {grupo}")
-
-opcion = int(input("Elige el número del grupo muscular: "))
-
-#restare un 1 porque coloque el menú que contara desde 1, pero python
-#cuenta desde 0 
-
-grupoElegido = grupos[opcion - 1]
-
-#se debe escoger el ejercicio dentro de ese grupo
-ejercioDelGrupo = ejerciciosDisponibles[grupoElegido]
 
 def elegirEjercicio():
+    print("\nGrupos musculares disponibles:")
+    for i, grupo in enumerate(grupos, start=1):
+        print(f"{i}. {grupo}")
+
+    opcion = int(input("Elige el número del grupo muscular: "))
+    grupoElegido = grupos[opcion - 1]
+    ejercicioDelGrupo = ejerciciosDisponibles[grupoElegido]
 
     print(f"\nEjercicios de {grupoElegido}:")
-    for i, nombre in enumerate(ejercioDelGrupo, start=1):
+    for i, nombre in enumerate(ejercicioDelGrupo, start=1):
         print(f"{i}. {nombre}")
 
     opcion = int(input("Elige el número del ejercicio: "))
-    return ejercioDelGrupo[opcion - 1]
-
+    return ejercicioDelGrupo[opcion - 1]
+    
 
 def mostrarMenu():
     #mostrare las ocpiones que el usuario puede escoger 
@@ -210,3 +195,5 @@ def buscarEjercicio():
             f"{ejercicio['series']} series x {ejercicio['repeticiones']} reps"
             f"con {ejercicio['peso']} kg"
         )
+
+    

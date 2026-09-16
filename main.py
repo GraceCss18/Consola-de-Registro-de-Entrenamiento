@@ -193,6 +193,20 @@ def calcularProgeso():
     else:
         print(f"Te mantuviste igual en '{nombre}'")
 
+def buscarEjercicio():
+    #Busca el ejercicio por nombre y muestra todos los que coinciden
+    print("\n--------Buscar ejercicio-------")
+    nombre = input("¿Qué ejercicio buscas?: ").lower()
 
+    encontrados = [e for e in Historial if nombre in e["nombre"]]
 
-    
+    if len(encontrados) == 0:
+        print("No encontré ningún ejercico con ese nombre")
+        return
+
+    for ejercicio in encontrados:
+        print(
+            f"[{ejercicio['dia']}] {ejercicio['nombre']} -"
+            f"{ejercicio['series']} series x {ejercicio['repeticiones']} reps"
+            f"con {ejercicio['peso']} kg"
+        )
